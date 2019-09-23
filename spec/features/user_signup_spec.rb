@@ -12,14 +12,3 @@ RSpec.describe 'user signup', type: :feature do
   end
   
 end
-
-
-
-# visit signup page
-# fill in email
-# fill in name
-# click on submit
-# check user existence
-# check if session/cookie is saved or not
-# rediect to user show page
-# check redirect
