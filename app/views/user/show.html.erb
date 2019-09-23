@@ -1,2 +1,5 @@
 <h1 class="user"><%= @user.name %></h1>
 <p>I am a new User</p>
+<% @events.each do |event| %>
+  <p><%= event.description %></p>
+<% end %>
