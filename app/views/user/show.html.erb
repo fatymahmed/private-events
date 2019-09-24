@@ -1,5 +1,10 @@
 <h1 class="user"><%= @user.name %></h1>
 <p>I am a new User</p>
+<h2>Events I created</h2>
 <% @events.each do |event| %>
   <p><%= event.description %></p>
+<% end %>
+<h2>Events I'm attending</h2>
+<% @attended_events.each do |attended_event| %>
+  <p><%= attended_event.description %></p>
 <% end %>
