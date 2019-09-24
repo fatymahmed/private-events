@@ -8,13 +8,9 @@ class Event < ApplicationRecord
 	validates_presence_of :date
 	validates :location, presence: true, length: { maximum: 100 }
 	
-	def self.upcoming
-		where('date >= ?', Date.today)
-	end
-	
-	def self.past
-		where('date < ?', Date.today)
-	end
+	scope :upcoming, -> { where('date >= ?', Date.today) }
+	scope :past, -> { where('date < ?', Date.today) }
+
 	
 end
 
