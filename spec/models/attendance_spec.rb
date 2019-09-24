@@ -6,7 +6,7 @@ RSpec.describe Attendance, type: :model do
   before :each do
     @user = User.create(name: 'example', email: 'example@user.com')
     @event = @user.events.create(description: 'Microverse assembly', date: Date.today, location: 'zoom')
-    @attendance=Attendance.new(attendee: @user,attended_event: @event)
+    @attendance = Attendance.new(attendee: @user, attended_event: @event)
   end
   context 'valid Attendance' do
     it 'with a valid user' do
@@ -17,4 +17,3 @@ RSpec.describe Attendance, type: :model do
     end
   end
 end
-  
