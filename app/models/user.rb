@@ -1,9 +1,10 @@
 class User < ApplicationRecord
 	has_many :events
-	
-	has_many :attendances, foreign_key: 'attendee_id'
-	has_many :attended_events, through: :attendances
-	
+	has_many :attendances
+	# has_many :attendances, foreign_key: 'attendee_id'
+
+	has_many :attended_events, class_name: 'Event', through: :attendances
+
 	before_save :downcase_email
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 
