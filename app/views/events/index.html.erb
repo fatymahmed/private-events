@@ -1,4 +1,6 @@
 <h1 class="All events"></h1>
-<% @events.each do |event| %>
-  <p><%= event.description %></p>
-<% end %>
+<ul>
+  <% @events.each do |event| %>
+    <li><%= link_to event.description, event %></li>
+  <% end %>
+</ul>
