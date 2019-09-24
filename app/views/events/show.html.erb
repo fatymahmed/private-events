@@ -1,8 +1,10 @@
-<p class="event"><%= @event.description %></p>
-<p><%= @event.date %></p>
-<p><%= @event.location %></p>
+<div class="event">
+  <%= render @event %>
+</div>
+
 <ul>
+  <h2>List of Attendees</h2>
   <% @event.attendees.each do |attendee| %>
-    <li><%= attendee.name %></li>
+    <h3><%= attendee.name %></h3>
   <% end %>
 </ul>
