@@ -11,6 +11,15 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 150 },
                     uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
 
+										
+	def upcoming_events
+		self.attended_events.where('date >= ?', Date.today)
+	end
+	
+	def previous_events
+		self.attended_events.where('date < ?', Date.today)
+	end									
+	
 	private
 	def downcase_email
 		email.downcase!

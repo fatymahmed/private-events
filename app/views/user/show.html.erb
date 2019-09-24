@@ -5,6 +5,11 @@
   <p><%= event.description %></p>
 <% end %>
 <h2>Events I'm attending</h2>
-<% @attended_events.each do |attended_event| %>
-  <p><%= attended_event.description %></p>
+<h3>Upcoming Events</h3>
+<% @upcoming_events.each do |upcoming_event| %>
+  <p><%= upcoming_event.description %></p>
+<% end %>
+<h3>Previous Events</h3>
+<% @previous_events.each do |previous_event| %>
+  <p><%= previous_event.description %></p>
 <% end %>
