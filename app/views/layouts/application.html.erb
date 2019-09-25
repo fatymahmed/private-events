@@ -23,6 +23,7 @@
           <li><%= link_to 'Create Event', new_event_path %></li>
           <li><%= link_to 'View Profile', user_path(current_user) %></li>
           <li><%= link_to 'View Events', root_path %></li>
+          <li><%= link_to 'Log Out', current_user, method: :delete %></li>
         <% end %>
       </ul>
     </div>
