@@ -6,8 +6,11 @@
           <div class="media-body">
             <h2><%= link_to event.description, event %></h2>
             <h3><%= event.date %></h3>
-            <h3><%= event.location %></h3>
-            <h3>Created by: <%= event.creator.name %></h3>
+            <h4><%= event.location %></h4>
+            <h4>Created by: <%= event.creator.name %></h4>
+            <% if :button  %>
+              <%= link_to "Attend Event", some_path,   %>
+            <% end %>
           </div>
         </div>
       </div>
