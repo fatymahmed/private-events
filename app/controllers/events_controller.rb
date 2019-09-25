@@ -33,7 +33,7 @@ class EventsController < ApplicationController
       render 'index'
     end
   end
-  
+
   private
 
   def events_params

@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @upcoming_events = @user.attended_events.upcoming
     @previous_events = @user.attended_events.past
   end
-  
+
   def destroy
     log_out
     redirect_to new_user_path
@@ -32,5 +32,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
-  
 end
