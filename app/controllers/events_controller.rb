@@ -24,6 +24,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def attend
+    event = Event.find(params[:id])
+    attendance = Attendance.new(attendee: current_user, attended_event: event)
+    if attendance.save
+      redirect_to current_user
+    else
+      render 'index'
+    end
+  end
+  
   private
 
   def events_params

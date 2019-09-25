@@ -9,7 +9,7 @@
             <h4><%= event.location %></h4>
             <h4>Created by: <%= event.creator.name %></h4>
             <% if :button  %>
-              <%= link_to "Attend Event", some_path,   %>
+              <%= link_to "Attend Event", attend_event_path(event), class: 'btn btn-primary'   %>
             <% end %>
           </div>
         </div>
