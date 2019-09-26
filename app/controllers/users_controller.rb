@@ -8,11 +8,24 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sign_in_as(@user)
-      redirect_to user_path(@user)
+      redirect_to signin_path
     else
       render 'new'
     end
+  end
+
+  def login
+    @user = User.find_by(email: params[:login][:email])
+    if @user
+      puts "user found"
+    else
+      puts "user not found"
+    end
+    sign_in_as(@user)
+    redirect_to user_path(@user)
+  end
+
+  def signin
   end
 
   def show
