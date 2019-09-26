@@ -8,6 +8,9 @@ RSpec.describe 'user signup', type: :feature do
     fill_in('Name', with: 'Example')
     fill_in('Email', with: 'example@email.com')
     click_button('Submit')
+    visit signin_path
+    fill_in('Email', with: 'example@email.com')
+    click_button('Submit')
     expect(page).to have_css('.user')
     expect(page).to have_content('Example')
   end

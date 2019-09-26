@@ -9,6 +9,9 @@ RSpec.describe 'user creates event', type: :feature do
     fill_in('Name', with: 'Example')
     fill_in('Email', with: 'example@email.com')
     click_button('Submit')
+    expect(page).to have_current_path(signin_path)
+    fill_in('Email', with: 'example@email.com')
+    click_button('Submit')
     visit new_event_path
     fill_in('Description', with: 'an event')
     fill_in('Date', with: Date.today)

@@ -16,17 +16,11 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email: params[:login][:email])
-    if @user
-      puts "user found"
-    else
-      puts "user not found"
-    end
     sign_in_as(@user)
     redirect_to user_path(@user)
   end
 
-  def signin
-  end
+  def signin; end
 
   def show
     @user = User.find(params[:id])
