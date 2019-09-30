@@ -9,8 +9,10 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(events_params)
     if @event.save
+      flash[:success] = 'Event created successfully'
       redirect_to @event
     else
+      flash.now[:danger] = 'Event creation failed. Please enter valid information'
       render 'new'
     end
   end

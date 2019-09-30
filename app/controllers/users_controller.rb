@@ -8,8 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = 'User created successfully'
       redirect_to signin_path
     else
+      flash.now[:danger] = 'User creation failed. Please enter valid information'
       render 'new'
     end
   end
@@ -17,6 +19,7 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by(email: params[:login][:email])
     sign_in_as(@user)
+    flash[:success] = 'Successfully signed in'
     redirect_to user_path(@user)
   end
 
@@ -31,6 +34,7 @@ class UsersController < ApplicationController
 
   def destroy
     log_out
+    flash[:danger] = 'Successfully logged out'
     redirect_to new_user_path
   end
 
