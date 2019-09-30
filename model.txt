@@ -1,0 +1,34 @@
+User - create events, attend events, send invites and parties
+
+Invite 
+        belongs to user (user_id) FK: source: class:
+        belongs to event    (event_id)
+
+Events -
+
+       - description - text
+       - date -Date
+       - location - string
+
+        belongs_to user  (FK : user_id) - creator class : User 
+
+        has_many invites
+        has_many attendees through invites class User
+
+User - name -string
+     - email -string
+
+        has_many events through invites
+        has_many invites
+
+        option 2
+
+User -      has_many events FK creater_id
+            has_many attendances
+
+        
+Event          -belongs to creater class: User FK:creater_id 
+                - has_many attendances
+
+Attendance     belongs_to user FK:attendee class:User
+               belongs_to event      event_id            

@@ -1,0 +1,10 @@
+<div class="event">
+  <%= render @event %>
+</div>
+
+<ul>
+  <h2>List of Attendees</h2>
+  <% @event.attendees.each do |attendee| %>
+    <h3><%= attendee.name %></h3>
+  <% end %>
+</ul>
